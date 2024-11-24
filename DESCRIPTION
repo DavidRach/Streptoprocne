@@ -14,15 +14,18 @@ BugReports: https://github.com/DavidRach/Streptoprocne/issues
 RoxygenNote: 7.3.2
 Imports: 
     dplyr,
-    tidyr,
-    purrr,
-    stringr,
     ggplot2,
-    plotly,
-    rvest
+    lubridate,
+    Luciernaga,
+    magrittr,
+    purrr,
+    rvest,
+    stringr,
+    tidyselect
 Depends: R (>= 4.3.0)
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    plotly
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 StagedInstall: no

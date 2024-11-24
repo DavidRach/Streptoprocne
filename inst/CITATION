@@ -1,0 +1,8 @@
+bibentry(
+  bibtype  = "Manual",
+  title    = "Streptoprocne: Ain't no such thing as bad weather, layer up wisely",
+  author   = "David Rach",
+  year     = "2024",
+  note   = "R package version 0.99.1",
+  url   = "https://github.com/DavidRach/Streptoprocne"
+)

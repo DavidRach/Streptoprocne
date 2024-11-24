@@ -16,5 +16,7 @@ A dataframe of sunrise sunset times
 Return sunrise sunset times from naval academy website
 }
 \examples{
-NULL
+
+url <- "https://aa.usno.navy.mil/calculated/rstt/year?ID=AA&year=2024&task=0&lat=39.2805&lon=-76.5940&label=Baltimore\%2C+MD&tz=5.00&tz_sign=-1&submit=Get+Data"
+SunriseTable <- Streptoprocne::SunriseSunset(x=url)
 }

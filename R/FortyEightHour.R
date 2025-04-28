@@ -18,9 +18,9 @@
 #' HourlyWeatherForecast <- FortyEightHour(url)
 FortyEightHour <- function(x){
   url <- read_html(x)
-  nodes <- url %>% html_nodes('body')
-  tablenodes <- nodes %>% html_nodes('table')
-  TheTable <- tablenodes[5] %>% html_table()
+  nodes <- url |> html_nodes('body')
+  tablenodes <- nodes |> html_nodes('table')
+  TheTable <- tablenodes[5] |> html_table()
   TheTable <- TheTable[[1]]
   TheTable <- TheTable[-1,]
   #TheTable
@@ -37,7 +37,7 @@ FortyEightHour <- function(x){
     TheTables <- list(Table1, Table2)
   }
 
-  TheAssembledData <- map(.x=TheTables, .f=TableProcessing) %>% bind_rows()
+  TheAssembledData <- map(.x=TheTables, .f=TableProcessing) |> bind_rows()
 
   return(TheAssembledData)
 
@@ -64,7 +64,7 @@ TableProcessing <- function(x){
 
   if (!any(col_indices== 2)){
     TheSoleSurvivor <- TableX[1, col_indices[1]]
-    TheBits <- str_split(TheSoleSurvivor, "/") %>% unlist()
+    TheBits <- str_split(TheSoleSurvivor, "/") |> unlist()
     TheNiblets <- as.integer(TheBits[2])
     if(TheNiblets != 1){TheNiblets <- TheNiblets -1
     TheNiblets <- as.character(TheNiblets)
@@ -78,6 +78,8 @@ TableProcessing <- function(x){
     StartIndex <- col_indices[1]
     SecondIndex <- col_indices[2]
   }
+
+  TableX <- TableX[!apply(TableX, 1, function(row) all(row == "")), ]
 
   EndIndex <- ncol(TableX)
   TheFirstCol <- TableX[,1]

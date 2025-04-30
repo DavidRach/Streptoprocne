@@ -16,7 +16,6 @@ Imports:
     dplyr,
     ggplot2,
     lubridate,
-    Luciernaga,
     magrittr,
     purrr,
     rvest,

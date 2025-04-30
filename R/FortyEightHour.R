@@ -50,7 +50,6 @@ FortyEightHour <- function(x){
 #' @importFrom stringr str_split
 #' @importFrom magrittr %>%
 #' @importFrom dplyr pull
-#' @importFrom Luciernaga NameCleanUp
 #' @importFrom dplyr bind_rows
 #' @importFrom dplyr select
 #' @importFrom tidyselect matches

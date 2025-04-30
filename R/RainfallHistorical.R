@@ -50,7 +50,8 @@ if (any(TheTable$Date == 1)) {
 
 TheTable$Date <- ymd(TheTable$Date)
 
-TheInitialData <- TheTable |> select(Date, Time, AirTempF, Precip1hr)
+  
+TheInitialData <- TheTable #|> select(Date, Time, AirTempF, Precip1hr)
 
 max_y <- max(TheInitialData$Precip1hr, na.rm = TRUE)
 
